@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Life | Annu's Academy</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Campus Life Page Specific Styles */
+        .campus-life-hero {
+            background-image: url('homebg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 5rem 4rem;
+            min-height: auto;
+        }
+
+        .nagavaram-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            align-items: center;
+            padding: 2rem 0;
+        }
+
+        .nagavaram-header {
+            text-align: center;
+        }
+
+        .nagavaram-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 3.5rem;
+            color: #6d1515;
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .nagavaram-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 2rem;
+            color: #6d1515;
+            margin: 0;
+            font-weight: 800;
+            margin-top: 0.3rem;
+        }
+
+        .nagavaram-content-wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 3.5rem;
+            width: 100%;
+        }
+
+        .nagavaram-image-large {
+            width: 480px;
+            height: 320px;
+            border-radius: 20px;
+            background: #ffffff;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nagavaram-image-large img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .nagavaram-image-small {
+            width: 250px;
+            height: 250px;
+            border-radius: 25px;
+            background: #ffffff;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nagavaram-image-small img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+            border-radius: 15px;
+        }
+
+        .nagavaram-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .nagavaram-features {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.3rem;
+        }
+
+        .nagavaram-features li {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #000;
+            font-weight: 500;
+            line-height: 1.3;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nagavaram-features li:before {
+            content: "•";
+            color: #000;
+            font-size: 1.4rem;
+        }
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .nagavaram-content-wrapper {
+                flex-direction: column;
+                gap: 3rem;
+            }
+
+            .nagavaram-title {
+                font-size: 2.8rem;
+            }
+
+            .nagavaram-subtitle {
+                font-size: 1.6rem;
+            }
+
+            .nagavaram-image-large {
+                width: 100%;
+                max-width: 480px;
+                height: auto;
+                aspect-ratio: 4/3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .campus-life-hero {
+                padding: 2rem 1.5rem;
+            }
+
+            .nagavaram-title {
+                font-size: 2.2rem;
+            }
+
+            .nagavaram-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .nagavaram-features li {
+                font-size: 1.4rem;
+            }
+
+            .nagavaram-image-small {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        /* Residential Facilities Section */
+        .residential-facilities-section {
+            background-image: url('homebg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 5rem 2rem 8rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .facilities-heading {
+            font-family: 'Inter', sans-serif;
+            font-size: 3.5rem;
+            color: #6d1515;
+            margin: 0 0 3.5rem 0;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        .rf-container {
+            background-color: rgba(198, 154, 154, 0.85); /* Pinkish mauve overlay */
+            border-radius: 30px;
+            padding: 3.5rem; 
+            max-width: 1050px;
+            width: 100%;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .rf-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .rf-card {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 2.5rem 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* very soft shadow */
+            transition: transform 0.3s ease;
+        }
+
+        .rf-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .rf-icon {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .rf-icon svg {
+            width: 50px;
+            height: 50px;
+            stroke: #111;
+        }
+
+        .rf-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #000;
+            font-weight: 700;
+            margin: 0 0 0.8rem 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .rf-card-desc {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            color: #8c3232;
+            margin: 0;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+          /* Section Divider */
+        .section-divider {
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #8c1010, transparent);
+            margin: 0;
+            padding: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .rf-container {
+                padding: 2.5rem;
+                max-width: 90%;
+            }
+            .rf-grid {
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .residential-facilities-section {
+                padding: 4rem 1.5rem;
+            }
+            .facilities-heading {
+                font-size: 2.5rem;
+            }
+            .rf-grid {
+                grid-template-columns: 1fr;
+            }
+            .rf-container {
+                padding: 2rem;
+            }
+            .rf-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        /* Residential Gallery Section */
+        .residential-gallery-section {
+            background-image: url('homebg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 5rem 2rem 8rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gallery-container {
+            background-color: rgba(245, 237, 233, 0.95); /* Light creamy pink background */
+            border-radius: 30px;
+            padding: 4rem;
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        .rg-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .rg-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Explicit 20px blur radius shadow */
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: #ffffff;
+        }
+        
+        .rg-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .rg-banner {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: #6d1515; /* Same dark red */
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 8px 20px 8px 30px;
+            clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%);
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 1024px) {
+            .gallery-container {
+                padding: 3rem;
+                max-width: 95%;
+            }
+            .rg-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .residential-gallery-section {
+                padding: 4rem 1.5rem;
+            }
+            .gallery-container {
+                padding: 2rem;
+            }
+            .rg-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* Extra Curricular & Beyond Classroom Sections */
+        .activities-section {
+            background-image: url('homebg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 5rem 2rem 8rem 2rem;
+            text-align: center;
+            min-height: auto;
+        }
+
+        .activities-subtitle {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.25rem;
+            color: #8c1010;
+            margin-bottom: 3.5rem;
+            font-weight: 500;
+        }
+
+        .activity-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .activity-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .activity-item:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .activity-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(100, 20, 20, 0.2);
+        }
+
+        .activity-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .activity-image img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 70px rgba(140, 16, 16, 0.35);
+        }
+
+        .activity-content {
+            text-align: left;
+            padding-right: 2rem;
+        }
+
+        .activity-item:nth-child(even) .activity-content {
+            padding-right: 0;
+            padding-left: 2rem;
+        }
+
+        .activity-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.85rem;
+            color: #8c1010;
+            margin-bottom: 1rem;
+            margin-top: 0;
+            font-weight: 700;
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+
+        .activity-divider {
+            width: 60px;
+            height: 3px;
+            background: rgba(212, 147, 139, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        .activity-content p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.05rem;
+            color: #8c1010;
+            line-height: 1.9;
+            margin: 0;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        /* Responsive Design for Activities */
+        @media (max-width: 768px) {
+            .activities-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .activity-item {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin-bottom: 3rem;
+            }
+
+            .activity-item:nth-child(even) {
+                direction: ltr;
+            }
+
+            .activity-content {
+                text-align: center;
+                padding-right: 0;
+            }
+
+            .activity-item:nth-child(even) .activity-content {
+                padding-left: 0;
+            }
+
+            .activity-divider {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .activity-image img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body class="campus-life-page">
+
+    <!-- Header -->
+    <header>
+        <div class="logo-section">
+            <img src="logo.jpg" alt="Annu's Academy Logo">
+            <div class="logo-text">
+                <span class="logo-text-top">ANNU'S ACADEMY</span>
+                <span class="logo-text-bottom">HIGH SCHOOL</span>
+            </div>
+        </div>
+        <nav>
+            <ul id="nav-list">
+                <a href="#" class="mobile-close-btn mobile-only" id="close-menu"><i class="fas fa-times"></i></a>
+                <li><a href="annusproto.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="academics.html">ACADEMICS</a></li>
+                <li><a href="campuslife.html">CAMPUS LIFE</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Nagavaram Campus Section -->
+    <section class="campus-life-hero">
+        <div class="nagavaram-section">
+            <div class="nagavaram-header reveal">
+                <h1 class="nagavaram-title">NAGAVARAM CAMPUS</h1>
+                <p class="nagavaram-subtitle">(Residential)</p>
+            </div>
+            
+            <div class="nagavaram-content-wrapper">
+                <div class="nagavaram-image-large reveal">
+                    <img src="4.png" alt="Nagavaram Campus" onerror="this.src='../4.png'">
+                </div>
+                <div class="nagavaram-image-small reveal delay-1">
+                    <img src="44.jpg" alt="Campus Activity" onerror="this.src='../44.jpg'">
+                </div>
+                <div class="nagavaram-right reveal delay-2">
+                    <ul class="nagavaram-features">
+                        <li>Safe Surroundings</li>
+                        <li>Hygienic Dining</li>
+                        <li>Supervised Study Hours</li>
+                        <li>Peer Learning</li>
+                        <li>Expansive Grounds</li>
+                        <li>Structured Routine</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Divider Line -->
+    <div class="section-divider"></div>
+
+    <!-- Residential Facilities Section -->
+    <section class="residential-facilities-section">
+        <h1 class="facilities-heading reveal">RESIDENTIAL FACILITIES</h1>
+        
+        <div class="rf-container">
+            <div class="rf-grid">
+                <!-- Dining -->
+                <div class="rf-card reveal-scale delay-1">
+                    <div class="rf-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="#222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M26 14 L26 24 L20 30 L20 54 C20 56 22 58 24 58 L36 58 C38 58 40 56 40 54 L40 30 L34 24 L34 14 Z" />
+                            <line x1="24" y1="14" x2="36" y2="14" />
+                            <path d="M44 38 C38 38 36 42 36 48 C36 54 38 58 44 58 C50 58 52 54 52 48 C52 42 50 38 44 38 Z" fill="#fff" />
+                            <path d="M44 38 C44 38 44 30 48 28" />
+                            <path d="M44 32 C48 32 50 34 50 34" />
+                        </svg>
+                    </div>
+                    <h3 class="rf-card-title">DINING</h3>
+                    <p class="rf-card-desc">Nutritious, balanced veg & non-veg<br>meals served daily.</p>
+                </div>
+
+                <!-- Mentorship -->
+                <div class="rf-card reveal-scale delay-2">
+                    <div class="rf-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="#222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="32,20 54,30 32,40 10,30" />
+                            <path d="M16 34.5 L16 46 C16 50 32 54 32 54 C32 54 48 50 48 46 L48 34.5" />
+                            <line x1="32" y1="40" x2="52" y2="44" />
+                            <line x1="52" y1="44" x2="52" y2="52" />
+                            <path d="M50 52 L54 52 L54 56 L50 56 Z" />
+                        </svg>
+                    </div>
+                    <h3 class="rf-card-title">MENTORSHIP</h3>
+                    <p class="rf-card-desc">Resident faculty available for after-<br>school doubt clearing.</p>
+                </div>
+
+                <!-- Sports -->
+                <div class="rf-card reveal-scale delay-3">
+                    <div class="rf-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="#222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="50" y1="14" x2="42" y2="22" />
+                            <circle cx="51" cy="13" r="2" />
+                            <path d="M42 22 L46 26 L22 50 C20 52 16 52 14 50 C12 48 12 44 14 42 L38 18 Z" />
+                            <line x1="38" y1="18" x2="42" y2="22" />
+                            <circle cx="50" cy="48" r="4" />
+                        </svg>
+                    </div>
+                    <h3 class="rf-card-title">SPORTS</h3>
+                    <p class="rf-card-desc">Expansive grounds for Cricket,<br>Volleyball, and Athletics, fostering<br>physical fitness and teamwork.</p>
+                </div>
+
+                <!-- Dorms -->
+                <div class="rf-card reveal-scale delay-4">
+                    <div class="rf-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="#222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="16" x2="18" y2="56" />
+                            <line x1="46" y1="16" x2="46" y2="56" />
+                            <rect x="18" y="26" width="28" height="6" />
+                            <rect x="18" y="44" width="28" height="6" />
+                            <line x1="38" y1="26" x2="38" y2="56" />
+                            <line x1="34" y1="26" x2="34" y2="56" />
+                            <line x1="34" y1="38" x2="38" y2="38" />
+                            <line x1="34" y1="44" x2="38" y2="44" />
+                            <line x1="34" y1="50" x2="38" y2="50" />
+                        </svg>
+                    </div>
+                    <h3 class="rf-card-title">DORMS</h3>
+                    <p class="rf-card-desc">Spacious, well-ventilated dormitories<br>designed for comfort, hygiene, and a<br>peaceful rest.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider Line -->
+    <div class="section-divider"></div>
+
+    <!-- Residential Gallery Section -->
+    <section class="residential-gallery-section">
+        <h1 class="facilities-heading reveal">RESIDENTIAL GALLERY</h1>
+        
+        <div class="gallery-container reveal-bottom delay-1">
+            <div class="rg-grid">
+                <!-- Image 1 -->
+                <div class="rg-image-wrapper reveal-scale delay-1">
+                    <img src="40.png" alt="Gallery Image 1" onerror="this.src='../40.png'">
+                </div>
+                
+                <!-- Image 2 -->
+                <div class="rg-image-wrapper reveal-scale delay-2">
+                    <img src="11.png" alt="Gallery Image 2" onerror="this.src='../11.png'">
+                    <div class="rg-banner">HOME AWAY HOME</div>
+                </div>
+                
+                <!-- Image 3 -->
+                <div class="rg-image-wrapper reveal-scale delay-3">
+                    <img src="41.png" alt="Gallery Image 3" onerror="this.src='../41.png'">
+                </div>
+                
+                <!-- Image 4 -->
+                <div class="rg-image-wrapper reveal-scale delay-1">
+                    <img src="5.png" alt="Gallery Image 4" onerror="this.src='../5.png'">
+                </div>
+                
+                <!-- Image 5 -->
+                <div class="rg-image-wrapper reveal-scale delay-2">
+                    <img src="8.png" alt="Gallery Image 5" onerror="this.src='../8.png'">
+                    <div class="rg-banner">SPORTS & GAMES</div>
+                </div>
+                
+                <!-- Image 6 -->
+                <div class="rg-image-wrapper reveal-scale delay-3">
+                    <img src="10.png" alt="Gallery Image 6" onerror="this.src='../10.png'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider Line -->
+    <div class="section-divider"></div>
+
+    <!-- Extra Curricular Activities Section -->
+    <section class="activities-section reveal">
+        <h1 class="facilities-heading reveal-bottom">EXTRA CURRICULAR ACTIVITIES</h1>
+
+        <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
+            <!-- Activity 1 -->
+            <div class="activity-item reveal">
+                <div class="activity-image reveal">
+                    <img src="24.jpg" alt="Heritage & Traditions" onerror="this.src='../24.jpg'">
+                </div>
+                <div class="activity-content reveal delay-1">
+                    <h3>Heritage & Traditions</h3>
+                    <div class="activity-divider"></div>
+                    <p>Celebrating our roots with vibrant Bathukamma festivities, keeping the rich culture of Telangana alive in our students.</p>
+                </div>
+            </div>
+
+            <!-- Activity 2 -->
+            <div class="activity-item reveal">
+                <div class="activity-image reveal">
+                    <img src="32.png" alt="National Pride & Patriotism" onerror="this.src='../32.png'">
+                </div>
+                <div class="activity-content reveal delay-1">
+                    <h3>National Pride & Patriotism</h3>
+                    <div class="activity-divider"></div>
+                    <p>Instilling a sense of national identity through grand Independence Day celebrations and patriotic tributes.</p>
+                </div>
+            </div>
+
+            <!-- Activity 3 -->
+            <div class="activity-item reveal">
+                <div class="activity-image reveal">
+                    <img src="17.jpg" alt="Junior Chef & Creative Arts" onerror="this.src='../17.jpg'">
+                </div>
+                <div class="activity-content reveal delay-1">
+                    <h3>Junior Chef & Creative Arts</h3>
+                    <div class="activity-divider"></div>
+                    <p>Exploring creative talents and practical life skills through interactive 'Junior Chef' programs and hands-on activities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider Line -->
+    <div class="section-divider"></div>
+
+    <!-- Beyond the Classroom Section -->
+    <section class="activities-section reveal">
+        <h1 class="facilities-heading reveal-bottom" style="margin-bottom: 1rem;">BEYOND THE CLASSROOM : JOURNEYS OF JOY</h1>
+        <p class="activities-subtitle reveal-bottom delay-1">At Annu's Academy, we believe student life should be full of adventure, laughter, and exploration.</p>
+
+        <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
+            <!-- Activity 4 -->
+            <div class="activity-item reveal">
+                <div class="activity-image reveal-left">
+                    <img src="25.jpg" alt="Nehru Zoological Park" onerror="this.src='../25.jpg'">
+                </div>
+                <div class="activity-content reveal-right">
+                    <h3>Nehru Zoological Park</h3>
+                    <div class="activity-divider"></div>
+                    <p>Exploring the wonders of the animal kingdom to spark curiosity and wonder, allowing students to connect with nature in a fun, relaxed environment.</p>
+                </div>
+            </div>
+
+            <!-- Activity 5 -->
+            <div class="activity-item reveal">
+                <div class="activity-image reveal-right">
+                    <img src="28.jpg" alt="Wonderla Water Park" onerror="this.src='../28.jpg'">
+                </div>
+                <div class="activity-content reveal-left">
+                    <h3>Wonderla Water Park</h3>
+                    <div class="activity-divider"></div>
+                    <p>A day of high-energy adventure where students take a break from books to enjoy world-class rides and water slides, fostering friendship and pure happiness.</p>
+                </div>
+            </div>
+
+            <!-- Activity 6 -->
+            <div class="activity-item reveal">
+                <div class="activity-image reveal-left">
+                    <img src="27.jpg" alt="Ramoji Film City" onerror="this.src='../27.jpg'">
+                </div>
+                <div class="activity-content reveal-right">
+                    <h3>Ramoji Film City</h3>
+                    <div class="activity-divider"></div>
+                    <p>Stepping into the magic of cinema and grand architecture, where students enjoy a day of spectacular shows and creative inspiration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- FOOTER SECTION --- -->
+    <footer class="footer-section reveal">
+        <div class="footer-container">
+            <!-- Left Column -->
+            <div class="footer-col about-col">
+                <h2 class="footer-brand">ANNU'S ACADEMY</h2>
+                <p class="footer-desc">Excellence in Education since 1999.</p>
+                <div class="footer-campuses">
+                    <p><strong><i class="fa-solid fa-map-pin"></i> Academic:</strong> KDR Nagar Campus (Nursery to 10th)</p>
+                    <p><strong><i class="fa-solid fa-map-pin"></i> Residential:</strong> Nagavaram Campus (Residential & Day Scholar)</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Middle Column -->
+            <div class="footer-col links-col">
+                <h3 class="footer-title">QUICK LINKS</h3>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Academics</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Campus Life</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Column -->
+            <div class="footer-col contact-col">
+                <h3 class="footer-title">CONTACT INFO</h3>
+                <ul class="contact-info-list">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>KDR Nagar, Wanaparthy,<br>TS - 509103</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 9440623248<br>+91 9848520248</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>info@annusacademy.in</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2024 Annu's Academy. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

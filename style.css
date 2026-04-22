@@ -1,0 +1,1965 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('peak_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+.mobile-only {
+    display: none;
+}
+
+/* --- HEADER --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.4); /* Darker glass to ensure text visibility */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-section img {
+    height: 60px;
+    background: white;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text-top {
+    font-size: 1.6rem;
+    font-family: 'Anton', 'Impact', sans-serif;
+    color: #8c1010;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+}
+
+.logo-text-bottom {
+    font-size: 1.6rem;
+    font-family: 'Anton', 'Impact', sans-serif;
+    color: #ffffff; /* Changed to white for better contrast with dark glassy header */
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+}
+
+nav ul {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcccc;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: white;
+    z-index: 1001;
+}
+
+/* Professional Contact Button Styling */
+nav ul li a[href="contact.html"] {
+    background: linear-gradient(135deg, #a81616, #7a0c0c);
+    color: #ffffff;
+    padding: 0.55rem 1.7rem;
+    border-radius: 40px; /* Elegant pill shape */
+    box-shadow: 0 4px 15px rgba(168, 22, 22, 0.4);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: inline-block;
+}
+
+nav ul li a[href="contact.html"]:hover {
+    background: linear-gradient(135deg, #c41919, #8f0e0e);
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(168, 22, 22, 0.6);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* --- HERO SECTION --- */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 4rem 4rem 4rem;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Left Content */
+.hero-left {
+    max-width: 650px;
+}
+
+.welcome-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    margin-bottom: -5px;
+    color: #fcebeb;
+    font-weight: 400;
+}
+
+.main-title {
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-bottom: 0px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.main-title .red-text {
+    color: #8c1010; 
+}
+
+.main-title .black-text {
+    color: #ffffff; /* Changed to white for visibility on peak background */
+}
+
+.subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: #f8e1e1;
+}
+
+.description {
+    font-size: 1.35rem;     /* Slightly larger corresponding to design */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    letter-spacing: 1.2px;
+    margin-bottom: 3rem;
+    color: #ffffff;
+}
+
+/* Contact Area inside Hero */
+.contact-section h3 {
+    font-weight: 300;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1.5px;
+}
+
+.contact-section h3 span {
+    font-weight: 400;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 1.2rem;
+    letter-spacing: 3px; /* Strong uniform spacing like the sample */
+    font-weight: 300;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-row i {
+    font-size: 1.3rem;
+    opacity: 0.8;
+}
+
+/* Right Card */
+.md-card-wrapper {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    width: 380px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.md-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    background: #0b1a40; /* Acts as dark blue background if image is transparent placeholder */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.md-name {
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 2.2rem;
+    color: #ffffff; /* Changed to white for dark background visibility */
+    margin-bottom: -5px; /* Pull the title closer */
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.md-degree {
+    font-size: 1rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    color: #eeeeee;
+    letter-spacing: 0;
+    vertical-align: top;
+    position: relative;
+    top: 5px;
+}
+
+.md-title {
+    font-family: 'Anton', 'Impact', sans-serif;
+    color: #8c1010;
+    font-weight: 400;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.md-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: white;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    padding: 0 10px;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+        padding: 3rem 2rem;
+    }
+    .hero-left {
+        max-width: 100%;
+    }
+    .contact-row {
+        justify-content: center;
+    }
+    nav ul {
+        display: none; /* Hide on mobile for now, or use a hamburger */
+    }
+    .why-choose-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    .main-title {
+        font-size: 2.8rem;
+    }
+    .contact-details {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+    .md-card-wrapper {
+        width: 100%;
+        max-width: 380px;
+    }
+}
+
+/* --- WHY CHOOSE SECTION --- */
+.why-choose-section {
+    background-image: url('homebg.png'); /* White background with red intertwining lines */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 6rem 4rem;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+}
+
+.why-choose-container {
+    max-width: 1300px;
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.why-choose-left {
+    flex: 1;
+}
+
+.why-choose-left img {
+    width: 100%;
+    height: auto;
+    border-radius: 40px; /* Extremely rounded just like design */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    display: block;
+}
+
+.why-choose-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.why-title {
+    font-family: 'Playfair Display', serif;
+    font-variant: small-caps;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #8c1010;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    letter-spacing: 2px;
+}
+
+.why-desc {
+    font-family: 'Roboto Slab', 'Playfair Display', serif;
+    font-size: 1.7rem;
+    line-height: 1.6;
+    color: #634343; /* Dark brown-red tint matching the screenshot */
+    margin-bottom: 3rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.learn-more-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 2.5rem;
+    color: #eaa6a6; /* Light pinkish text matching "LEARN MORE" */
+    letter-spacing: 4px;
+    transition: 0.3s;
+    width: fit-content;
+}
+
+.learn-more-btn i {
+    color: #000;
+    font-size: 1.8rem;
+    transition: 0.3s;
+}
+
+.learn-more-btn:hover {
+    color: #8c1010;
+}
+
+.learn-more-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Campus Link Buttons */
+.campus-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #a81616, #7a0c0c);
+    color: #ffffff !important;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(168, 22, 22, 0.3);
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+.campus-link i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.campus-link:hover {
+    background: linear-gradient(135deg, #c41919, #8f0e0e);
+    box-shadow: 0 6px 20px rgba(168, 22, 22, 0.5);
+    transform: translateY(-3px);
+}
+
+.campus-link:hover i {
+    transform: translateX(5px);
+}
+
+@media (max-width: 1024px) {
+    .why-choose-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+}
+
+/* --- CAMPUS SHOWCASE SECTION --- */
+.campus-showcase {
+    background-image: url('peak_background.png'); /* The user's peak background pattern */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 5rem 4rem; /* Reduced padding from 8rem */
+}
+
+.campus-showcase .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem; /* Reduced gap between rows */
+}
+
+/* Campus Badge */
+.campus-badge {
+    background: rgba(140, 16, 16, 0.1);
+    color: #8c1010;
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(140, 16, 16, 0.2);
+}
+
+.campus-row {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+/* Image styling */
+.image-box {
+    flex: 0 0 45%;
+    position: relative;
+    z-index: 1; /* keep image in front of pseudo element */
+}
+
+/* Solid red backbox placed diagonally left-down behind the image */
+.image-box::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -30px;
+    width: 100%;
+    height: 100%;
+    background-color: #5a0505;
+    opacity: 20%;
+    border-radius: 40px;
+    z-index: -1;
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Normal realistic drop shadow */
+    display: block;
+}
+
+.content-box {
+    flex: 1;
+}
+
+.content-box .title {
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 2.2rem; /* Reduced to fit firmly on one line */
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    font-weight: 400; 
+    white-space: nowrap; /* Ensure it stays on one line */
+}
+
+.content-box .subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+}
+
+.features-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.features-list li {
+    font-family: 'Inter', 'Roboto', sans-serif;
+    font-size: 1.25rem; /* Balanced text size */
+    font-weight: 700;
+    color: #ffffff; /* White text for visibility */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.features-list li i {
+    color: #ffc107; /* Golden star for accent */
+    font-size: 1.1rem; /* Slightly smaller than text for visual balance */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; /* Fixed width to ensure equal alignment of following text */
+}
+
+
+@media (max-width: 1024px) {
+    .campus-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 4rem;
+    }
+    .features-list {
+        display: inline-flex; 
+        flex-direction: column; /* Re-apply column for vertical stacking */
+        margin: 0 auto; 
+        text-align: left; 
+    }
+    .features-list li {
+        justify-content: flex-start; /* Keep icons on the left */
+        width: fit-content;
+    }
+}
+
+/* --- FACILITIES SECTION --- */
+.facilities-section {
+    background-image: url('homebg.png'); /* Sibling pattern texture again */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 6rem 4rem;
+    text-align: center;
+}
+
+.facilities-title {
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 3.5rem;
+    color: #8c1010;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.facilities-subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    color: #555555;
+    margin-bottom: 4rem;
+    font-weight: 400;
+}
+
+.facilities-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+}
+
+.facility-card {
+    background: #ffffff; /* Bright solid white box */
+    border-radius: 40px;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.06); 
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.facility-card:hover {
+    transform: translateY(-8px);
+}
+
+.facility-icon {
+    font-size: 3.5rem; /* Large icons */
+    margin-bottom: 1.5rem;
+}
+
+.facility-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    color: #000000;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+@media (max-width: 1024px) {
+    .facilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .facilities-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- FOOTER SECTION --- */
+.footer-section {
+    background-image: url('peak_background.png'); /* The user's peak background pattern */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(20, 1, 1); /* Dark cherry base */
+    background-blend-mode: multiply; /* Will make the background very dark */
+    padding: 6rem 4rem 2rem 4rem;
+    color: #ffffff;
+    border-top: 2px solid #8c1010; /* Clean red separator from previous sections */
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.2fr;
+    gap: 4rem;
+    padding-bottom: 4rem;
+}
+
+.footer-brand {
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 3.2rem;
+    color: #e02424; /* Bright active red matching subagent analysis */
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.footer-desc {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #cccccc;
+    margin-bottom: 2rem;
+}
+
+.footer-campuses p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
+    color: #bbbbbb;
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+}
+
+.footer-campuses p strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.footer-campuses i {
+    color: #e02424;
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.social-icons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 1.2rem;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background: #e02424;
+    border-color: #e02424;
+    transform: translateY(-5px);
+}
+
+.footer-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 2.2rem;
+    letter-spacing: 1px;
+}
+
+.links-col ul, .contact-info-list {
+    list-style: none;
+    padding: 0;
+}
+
+.links-col ul li {
+    margin-bottom: 1.2rem;
+}
+
+.links-col ul li a {
+    text-decoration: none;
+    color: #cccccc;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.links-col ul li a i {
+    color: #e02424;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.links-col ul li a:hover {
+    color: #ffffff;
+    transform: translateX(5px);
+}
+
+.links-col ul li a:hover i {
+    color: #ffffff;
+}
+
+.contact-info-list li {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 1.8rem;
+    font-family: 'Inter', sans-serif;
+    color: #cccccc;
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+.contact-info-list li i {
+    color: #e02424;
+    font-size: 1.4rem;
+    margin-top: 5px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    color: #888888;
+    font-size: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-campuses p {
+        justify-content: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+    .contact-info-list {
+        display: inline-flex;
+        flex-direction: column;
+        text-align: left;
+        margin: 0 auto;
+    }
+    .contact-info-list li {
+        justify-content: flex-start;
+        text-align: left;
+    }
+}
+
+/* ========================================= */
+/* ---        ABOUT PAGE STYLING         --- */
+/* ========================================= */
+
+.about-page-main {
+    padding: 6rem 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.about-hero-container {
+    background-color: #ffffff;
+    border-radius: 40px;
+    padding: 5rem 4rem;
+    max-width: 1300px;
+    width: 100%;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+.about-main-title {
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 3.8rem;
+    color: #8c1010;
+    margin-bottom: 4rem;
+    letter-spacing: 2px;
+}
+
+.about-cards-wrapper {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+}
+
+.about-card {
+    flex: 1;
+    background: rgba(140, 16, 16, 0.06); /* Soft muted red/pink background */
+    border-radius: 30px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(140, 16, 16, 0.1);
+}
+
+.about-card-title {
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 2.2rem;
+    color: #8c1010;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+.about-card-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.about-card-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: #333333;
+    text-align: left;
+}
+
+.about-card-text strong {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    color: #8c1010;
+}
+
+@media (max-width: 1024px) {
+    .about-cards-wrapper {
+        flex-direction: column;
+    }
+    .about-hero-container {
+        padding: 3rem 2rem;
+    }
+}
+
+/* ========================================= */
+/* ---      ACHIEVEMENTS SECTION         --- */
+/* ========================================= */
+
+.achievements-section {
+    background-image: url('homebg.png'); /* Pattern background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 6rem 8rem;
+}
+
+.achievements-main-title {
+    color: #8c1010; /* Muted coral red from design */
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 5rem;
+    letter-spacing: 2px;
+}
+
+.achievements-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+}
+
+.achievement-row {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+}
+
+.ach-img-frame {
+    flex: 0 0 320px; /* Fixed width for the image frame */
+    background-color: #feecec; /* The soft light pink wrap around images */
+    padding: 15px; /* Creates the border thickness */
+    border-radius: 25px; /* Soft outer curve */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ach-img-frame img {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 12px; /* Inner image curve */
+}
+
+/* Adjustments for specific squares if needed */
+
+.achievement-row:nth-child(4) .ach-img-frame {
+    background-color: #f7e6e6; /* the JustDial has a tiny subtle difference or same */
+}
+
+.ach-text-content {
+    flex: 1;
+}
+
+.ach-title {
+    color: #df6969; /* Matches main heading coral red */
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.ach-desc {
+    color: #7b2929; /* Dark reddish brown text color */
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+    .achievement-row {
+        flex-direction: column;
+        text-align: center;
+    }
+    .ach-img-frame, .achievement-row:nth-child(3) .ach-img-frame {
+        flex: auto;
+        width: 100%;
+        max-width: 400px;
+        margin-left: 0;
+    }
+}
+/* ========================================= */
+/* ---     EXPERT EDUCATORS SECTION      --- */
+/* ========================================= */
+
+.educators-section {
+    background-image: url('peak_background.png'); /* 100% Strictly User's Texture */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8rem 4rem;
+    position: relative;
+    /* Ensuring no solid fallbacks override the user's specific image */
+}
+
+.educators-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem; 
+    color: #ffffff; /* Typical for peak background */
+    text-align: center;
+    margin-top: 3rem; /* Lowers the heading from the top edge */
+    margin-bottom: 6rem; /* Also slightly lowers the content beneath it */
+    font-weight: 400;
+}
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1400px; /* Let cards grow as big as possible */
+    margin: 0 auto;
+}
+
+.carousel-btn {
+    background: transparent;
+    border: none;
+    color: #1a0505; /* Deep dark icon color */
+    font-size: 1.8rem; /* Dramatically shrunk down as requested */
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.carousel-btn:hover {
+    color: #000000;
+    transform: scale(1.1);
+}
+
+.educators-cards-container {
+    display: flex;
+    gap: 3.5rem; /* Spacious gap so cards expand cleanly */
+    flex: 1;
+    justify-content: center;
+}
+
+.educator-card {
+    flex: 1;
+    max-width: 420px; /* ALLOW CARDS TO BE MASSIVE */
+    aspect-ratio: 3 / 4; /* Keeps them tall no matter how wide they stretch */
+    background: rgba(255, 255, 255, 0.15); /* Classic frosted glass for visibility */
+    border-radius: 40px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.educator-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Landscape internal empty block */
+    background-color: #ba7a7a; /* Exact muddy rose box */
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.educator-info p {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff; /* Kept white, added drop shadow so it NEVER goes invisible */
+    font-size: 1.5rem; 
+    line-height: 1.8;
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6); /* GUARANTEED VISIBILITY */
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 4.5rem;
+    margin-bottom: 8rem;
+    padding-bottom: 2rem;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    background-color: #d1d1d1;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot:hover {
+    background-color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+    .educators-cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+}
+
+/* ========================================= */
+/* ---   RESIDENTIAL CAMPUS SECTION      --- */
+/* ========================================= */
+
+.residential-section {
+    background-image: url('homebg.png'); /* Light pink/beige background with decorative patterns */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    padding: 6rem 4rem;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.residential-container {
+    max-width: 1300px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+/* Left Column: Subtitle + Image */
+.res-left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.res-sub-heading {
+    font-family: 'Inika', serif;
+    font-size: 2.5rem;
+    color: #8c1010;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.res-img-frame {
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    display: block;
+}
+
+.res-img-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+}
+
+/* Right Column: Main Title + Content */
+.res-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.res-main-heading {
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 4.2rem;
+    color: #8c1010;
+    font-weight: 400;
+    margin: 0;
+    margin-top: 5rem;
+    letter-spacing: 2px;
+    line-height: 1.1;
+}
+
+.res-typewriter-text {
+font-family: 'Inconsolata', monospace;
+    font-size: 1.3rem;
+    color: #840B0B;
+    font-weight: 500;
+    line-height: 1.75;
+    letter-spacing: 0.4px;
+    margin: 0;
+}
+
+.res-features-list {
+    list-style-type: disc;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.res-features-list li {
+  font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-size: 1.28rem;
+    color: #673131;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+}
+
+.res-features-list li strong {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 900;
+    color: #673131;
+}
+
+.res-know-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #f0d5d5;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 1.6rem;
+    color: #8c1010;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+    width: fit-content;
+    padding: 12px 28px;
+    margin-top: 1.5rem;
+    border-radius: 25px;
+}
+
+.res-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #f0d5d5;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 1.6rem;
+    color: #8c1010;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+    width: fit-content;
+    padding: 12px 28px;
+    margin-top: 1.5rem;
+    border-radius: 25px;
+}
+
+.res-know-more-btn:hover,
+.res-btn:hover {
+    background: #e8b8b8;
+    color: #6b0a0a;
+}
+
+.res-know-more-btn i,
+.res-btn i {
+    font-size: 1.2rem;
+    transition: 0.3s ease;
+}
+
+.res-know-more-btn:hover i,
+.res-btn:hover i {
+    transform: translateX(5px);
+}
+
+@media (max-width: 1024px) {
+    .residential-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .res-main-heading {
+        font-size: 3.2rem;
+    }
+    
+    .res-typewriter-text {
+        font-size: 1.1rem;
+    }
+}
+
+/* ========================================= */
+/* ---    VISIT OUR CAMPUSES SECTION     --- */
+/* ========================================= */
+
+.campuses-section {
+    background-image: url('homebg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    padding: 5rem 4rem 6rem 4rem;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.campuses-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.campuses-title {
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 3.5rem;
+    color: #8c1010;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.campuses-title-black {
+    color: #000000;
+    margin-left: 10px;
+}
+
+.campuses-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #8c1010;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.campuses-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Left Side: Large Image */
+.campuses-left {
+    display: flex;
+    justify-content: center;
+}
+
+.campuses-main-image {
+    width: 100%;
+    max-width: 550px;
+    aspect-ratio: 4 / 5;
+    background-color: #c0c0c0;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.campuses-main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Right Side: Campus Cards */
+.campuses-right {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.campus-card {
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 2rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    transition: 0.3s ease;
+}
+
+.campus-card:hover {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.campus-card-image {
+    flex: 0 0 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 150px;
+}
+
+.campus-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.35);
+}
+
+.campus-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.campus-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
+    color: #000000;
+    font-weight: 700;
+    margin: 0 0 0.8rem 0;
+    letter-spacing: 0.5px;
+}
+
+.campus-card-address {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: #333333;
+    font-weight: 400;
+    margin: 0 0 1.2rem 0;
+    line-height: 1.6;
+}
+
+.campus-card-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.campus-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #f5f5f5;
+    border-radius: 50%;
+    color: #8c1010;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.campus-icon:hover {
+    background: #8c1010;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.campus-directions {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease;
+    width: fit-content;
+    background: #f0d5d5;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.campus-directions:hover {
+    color: #8c1010;
+    transform: translateX(5px);
+    background: #e8b8b8;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+     /* Section Divider */
+        .section-divider {
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #8c1010, transparent);
+            margin: 0;
+            padding: 0;
+        }
+
+@media (max-width: 1024px) {
+    .campuses-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .campuses-title {
+        font-size: 2.8rem;
+    }
+    
+    .campuses-subtitle {
+        font-size: 2rem;
+    }
+    
+    .campus-card {
+        flex-direction: column;
+    }
+    
+    .campus-card-image {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 200px;
+    }
+}
+
+/* ========================================= */
+/* ---   GLOBAL MOBILE FIXES (Comprehensive)  --- */
+/* ========================================= */
+@media (max-width: 768px) {
+    /* Base Overrides */
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 0.8rem 1.5rem !important;
+    }
+
+    /* About Hero & Cards */
+    .about-page-main {
+        padding: 3rem 1.25rem !important;
+    }
+    .about-hero-container {
+        padding: 3rem 1.25rem !important;
+        border-radius: 25px !important;
+    }
+    .about-main-title {
+        font-size: 2.1rem !important;
+        margin-bottom: 2rem !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+    }
+    .about-cards-wrapper {
+        flex-direction: column !important;
+        gap: 2rem !important;
+        width: 100% !important;
+    }
+    .about-card {
+        padding: 2rem !important;
+        border-radius: 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .about-card-title {
+        font-size: 1.8rem !important;
+    }
+    .about-card-img {
+        height: 200px !important;
+        max-height: 200px !important;
+    }
+
+    /* Hero Section Fixes */
+    .hero {
+        padding: 2.5rem 1.5rem !important;
+        flex-direction: column !important;
+        gap: 3rem !important;
+    }
+
+    .main-title {
+        font-size: 2.2rem !important;
+        white-space: normal !important;
+        text-align: center;
+        color: #ffffff;
+        margin-top: 1rem;
+    }
+
+    .main-title .black-text {
+        color: #ffffff !important;
+    }
+
+    .welcome-text {
+        font-size: 1.4rem !important;
+        text-align: center;
+    }
+
+    .subtitle {
+        font-size: 1.1rem !important;
+        text-align: center;
+    }
+
+    .description {
+        font-size: 1.1rem !important;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .contact-section h3 {
+        font-size: 1.2rem !important;
+        text-align: center;
+    }
+
+    .contact-details {
+        font-size: 0.95rem !important;
+        letter-spacing: 1px !important;
+    }
+
+    .md-card-wrapper {
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 0 auto;
+        padding: 20px !important;
+    }
+
+    .md-name {
+        font-size: 1.6rem !important;
+    }
+
+    .md-title {
+        font-size: 1.1rem !important;
+    }
+
+    /* Why Choose Section */
+    .why-choose-section {
+        padding: 3rem 1.5rem !important;
+    }
+
+    .why-choose-container {
+        gap: 2rem !important;
+    }
+
+    .why-title {
+        font-size: 2rem !important;
+        margin-bottom: 1.5rem;
+    }
+
+    .why-desc {
+        font-size: 1.1rem !important;
+        margin-bottom: 2rem;
+    }
+
+    .learn-more-btn {
+        font-size: 1.6rem !important;
+        margin: 0 auto;
+    }
+
+    /* Campus Showcase */
+    .campus-showcase {
+        padding: 3rem 1.5rem !important;
+    }
+
+    .campus-row {
+        flex-direction: column !important;
+        gap: 3rem !important;
+    }
+
+    .image-box {
+        flex: 0 0 100% !important;
+    }
+
+    .content-box .title {
+        font-size: 1.6rem !important;
+        white-space: normal !important;
+        text-align: center;
+    }
+
+    .content-box .subtitle {
+        font-size: 1.2rem !important;
+        text-align: center;
+    }
+
+    .features-list li {
+        font-size: 1.1rem !important;
+    }
+
+    /* Facilities Section */
+    .facilities-section {
+        padding: 3rem 1.5rem !important;
+    }
+
+    .facilities-title {
+        font-size: 2.22rem !important;
+        margin-bottom: 1rem;
+    }
+
+    .facilities-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+
+    .facility-card {
+        padding: 2rem 1rem !important;
+    }
+
+    .facility-icon {
+        font-size: 2.5rem !important;
+    }
+
+    .facility-text {
+        font-size: 1rem !important;
+    }
+
+    /* Educators Section Mobile */
+    .educators-section {
+        padding: 4rem 1.5rem !important;
+    }
+    .educators-main-title {
+        font-size: 2.2rem !important;
+        margin-bottom: 3rem !important;
+    }
+    .educators-cards-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 2.5rem !important;
+    }
+    .educator-card {
+        width: 100% !important;
+        max-width: 350px !important;
+        padding: 25px !important;
+    }
+
+    /* Residential Section Mobile */
+    .residential-section {
+        padding: 4rem 1.5rem !important;
+    }
+    .residential-container {
+        grid-template-columns: 1fr !important;
+        gap: 3rem !important;
+    }
+    .res-sub-heading {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+    }
+    .res-main-heading {
+        font-size: 2.8rem !important;
+        margin-top: 1rem !important;
+        text-align: center !important;
+    }
+    .res-typewriter-text {
+        font-size: 1.15rem !important;
+        text-align: center !important;
+    }
+
+    /* Campuses Section Mobile */
+    .campuses-section {
+        padding: 4rem 1.5rem !important;
+    }
+    .campuses-title {
+        font-size: 2.2rem !important;
+    }
+    .campuses-subtitle {
+        font-size: 1.8rem !important;
+    }
+    .campuses-container {
+        grid-template-columns: 1fr !important;
+        gap: 3rem !important;
+    }
+    .campus-card {
+        flex-direction: column !important;
+        padding: 1.5rem !important;
+    }
+    .campus-card-image {
+        width: 100% !important;
+        height: 180px !important;
+    }
+
+    /* Mobile Nav Header Fix */
+    header {
+        padding: 0.8rem 1.25rem !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .logo-section {
+        flex: 1;
+    }
+
+    .mobile-only {
+        display: block !important;
+    }
+
+    .hamburger {
+        display: block !important;
+        font-size: 1.8rem;
+        z-index: 2000;
+        margin-left: 1rem;
+    }
+
+    nav ul {
+        position: fixed !important;
+        top: 0 !important;
+        left: -100% !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background: rgba(140, 16, 16, 0.99) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        transition: 0.5s ease-in-out !important;
+        z-index: 1500 !important;
+        backdrop-filter: blur(20px) !important;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Close Button in Mobile Menu (Top Right) */
+    .mobile-close-btn {
+        position: absolute !important;
+        top: 25px !important;
+        right: 25px !important;
+        font-size: 2.22rem !important;
+        color: #ffffff !important;
+        cursor: pointer;
+        z-index: 1600;
+        transition: 0.3s ease;
+        text-decoration: none;
+    }
+
+    .mobile-close-btn:hover {
+        transform: rotate(90deg);
+        color: #ffcccc !important;
+    }
+
+    nav ul.active {
+        left: 0 !important;
+    }
+
+    nav ul li {
+        margin: 1rem 0 !important;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: 0.4s ease;
+    }
+
+    nav ul.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    nav ul li a {
+        font-size: 1.8rem !important;
+        font-weight: 700 !important;
+        color: white !important;
+    }
+
+    /* Staggered animation for menu items */
+    nav ul.active li:nth-child(1) { transition-delay: 0.1s; }
+    nav ul.active li:nth-child(2) { transition-delay: 0.2s; }
+    nav ul.active li:nth-child(3) { transition-delay: 0.3s; }
+    nav ul.active li:nth-child(4) { transition-delay: 0.4s; }
+    nav ul.active li:nth-child(5) { transition-delay: 0.5s; }
+}
+
+/* Specific scaling for small mobile devices */
+@media (max-width: 420px) {
+    .main-title {
+        font-size: 1.8rem !important;
+    }
+    .facilities-title {
+        font-size: 1.8rem !important;
+    }
+    .footer-brand {
+        font-size: 2.2rem !important;
+    }
+    .about-main-title {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* --- SCROLL REVEAL ANIMATIONS --- */
+.reveal {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1);
+    transform: translateY(30px); /* Default fade-up */
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animations from Bottom (redundant now but kept for clarity) */
+.reveal-bottom {
+    transform: translateY(30px);
+}
+
+.reveal-bottom.active {
+    transform: translateY(0);
+}
+
+/* Animations from Left */
+.reveal-left {
+    transform: translateX(-30px);
+}
+
+.reveal-left.active {
+    transform: translateX(0);
+}
+
+/* Animations from Right */
+.reveal-right {
+    transform: translateX(30px);
+}
+
+.reveal-right.active {
+    transform: translateX(0);
+}
+
+/* Scale Animation */
+.reveal-scale {
+    transform: scale(0.9);
+}
+
+.reveal-scale.active {
+    transform: scale(1);
+    transform: translateY(0);
+}
+
+/* Staggered Delay Helpers */
+.reveal.delay-1 { transition-delay: 0.1s; }
+.reveal.delay-2 { transition-delay: 0.2s; }
+.reveal.delay-3 { transition-delay: 0.3s; }
+.reveal.delay-4 { transition-delay: 0.4s; }
+.reveal.delay-5 { transition-delay: 0.45s; }
+
+/* Responsive adjustments for reveal */
+@media (max-width: 768px) {
+    .reveal {
+        transition-duration: 0.6s;
+        transform: translateY(20px);
+    }
+    .reveal-left, .reveal-right {
+        transform: translateX(0);
+        transform: translateY(20px);
+    }
+}

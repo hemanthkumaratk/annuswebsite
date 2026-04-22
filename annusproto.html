@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annu's Academy High School - Prototype</title>
+    <!-- Google Fonts for Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500;700;900&family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-section">
+            <img src="logo.jpg" alt="Annu's Academy Logo">
+            <div class="logo-text">
+                <span class="logo-text-top">ANNU'S ACADEMY</span>
+                <span class="logo-text-bottom">HIGH SCHOOL</span>
+            </div>
+        </div>
+        <nav>
+            <ul id="nav-list">
+                <a href="#" class="mobile-close-btn mobile-only" id="close-menu"><i class="fas fa-times"></i></a>
+                <li><a href="annusproto.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="academics.html">ACADEMICS</a></li>
+                <li><a href="campuslife.html">CAMPUS LIFE</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <main class="hero reveal">
+        <div class="hero-left reveal-left">
+            <h3 class="welcome-text">Welcome to</h3>
+            <h1 class="main-title">
+                <span class="red-text">ANNU'S ACADEMY</span>
+                <span class="black-text">HIGH SCHOOL</span>
+            </h1>
+            <h4 class="subtitle">Nurturing Excellence, Character & Future Leaders</h4>
+            
+            <p class="description">
+                Annu's Academy High School provides a supportive and disciplined learning environment where students are encouraged to achieve academic excellence, build strong values, and prepare for a successful future.
+            </p>
+
+            <div class="contact-section">
+                <h3>LOCATION: <span>KDR NAGAR , WANAPARTHY</span></h3>
+                
+                <div class="contact-details">
+                    <div class="contact-row">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>9876543210</span> &nbsp;|&nbsp; <span>1234567890</span>
+                    </div>
+                    <div class="contact-row">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>annusacademywnp@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-right reveal">
+            <div class="md-card-wrapper">
+                <!-- IMPORTANT: Replace src with the exact Managing Director photo name from the folder -->
+                <img src="36.png" alt="Managing Director" class="md-image">
+                
+                <h2 class="md-name">B.ANUGNA REDDY <span class="md-degree">MS (USA)</span></h2>
+                <h4 class="md-title">MANAGING DIRECTOR</h4>
+                <p class="md-quote">"Education shapes character, confidence, and the future."</p>
+            </div>
+        </div>
+    </main>
+
+    <section class="why-choose-section">
+        <div class="why-choose-container">
+            <div class="why-choose-left reveal">
+                <img src="../12.png" alt="Students of Annus Academy" onerror="this.src='12.png'">
+            </div>
+            <div class="why-choose-right reveal">
+                <h2 class="why-title">Why Choose Annus Academy</h2>
+                <p class="why-desc">
+                    Established in 1999, Annus Academy High School nurtures excellence, character, and future leaders in a disciplined learning environment. With 25+ years serving Wanaparthy families, we deliver strong academics, modern facilities, and holistic growth—rated 4.6/5 by parents.
+                </p>
+                <a href="about.html" class="learn-more-btn">
+                    LEARN MORE <i class="fa-solid fa-circle-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Campus Showcase -->
+    <section class="campus-showcase">
+        <div class="container">
+            <!-- Academic Campus (KDR Nagar) -->
+            <div class="campus-row reveal">
+                <div class="image-box reveal">
+                    <img src="school.png" alt="Academic Campus" onerror="this.src='school.png'">
+                </div>
+                <div class="content-box reveal delay-1">
+                    <span class="campus-badge">KDR NAGAR CAMPUS</span>
+                    <h2>ACADEMIC EXCELLENCE</h2>
+                    <p>Designed for focused learning, our KDR Nagar campus houses Nursery to 10th grade with state-of-the-art classrooms and dedicated support for every child.</p>
+                    <a href="academics.html" class="campus-link">EXPLORE ACADEMICS <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Residential Campus (Nagavaram) -->
+            <div class="campus-row reveal">
+                <div class="image-box reveal">
+                    <img src="residential.png" alt="Residential Campus" onerror="this.src='residential.png'">
+                </div>
+                <div class="content-box reveal delay-1">
+                    <span class="campus-badge">NAGAVARAM CAMPUS</span>
+                    <h2>RESIDENTIAL & DAY SCHOLAR</h2>
+                    <p>Experience holistic growth at our Nagavaram residential campus. Offering structured routines, supervised studies, and expansive sporting facilities in a safe environment.</p>
+                    <a href="campuslife.html" class="campus-link">LIFE AT CAMPUS <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Glimpse of Facilities -->
+    <section class="facilities-section">
+        <h2 class="facilities-title reveal">GLIMPSE OF FACILITITES</h2>
+        <p class="facilities-subtitle reveal delay-1">Experience a vibrant fusion of modern digital learning and traditional extracurricular spirit</p>
+
+        <div class="facilities-grid">
+            <!-- Row 1 -->
+            <div class="facility-card reveal-scale delay-1">
+                <div class="facility-icon"><i class="fa-solid fa-tv" style="color: #e55b76;"></i></div>
+                <h3 class="facility-text">Digital Classrooms</h3>
+            </div>
+            <div class="facility-card reveal-scale delay-2">
+                <div class="facility-icon"><i class="fa-solid fa-language" style="color: #3b82f6;"></i></div>
+                <h3 class="facility-text">Professional faculty</h3>
+            </div>
+            <div class="facility-card reveal-scale delay-3">
+                <div class="facility-icon"><i class="fa-solid fa-music" style="color: #000000;"></i></div>
+                <h3 class="facility-text">Cultural activities</h3>
+            </div>
+            <div class="facility-card reveal-scale delay-4">
+                <div class="facility-icon"><i class="fa-solid fa-video" style="color: #e2617f;"></i></div>
+                <h3 class="facility-text">CCTV Surveillance</h3>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="facility-card reveal-scale delay-1">
+                <div class="facility-icon"><i class="fa-solid fa-bus" style="color: #000000;"></i></div>
+                <h3 class="facility-text">Transport Facility</h3>
+            </div>
+            <div class="facility-card reveal-scale delay-2">
+                <div class="facility-icon"><i class="fa-solid fa-trophy" style="color: #000000;"></i></div>
+                <h3 class="facility-text">Playground</h3>
+            </div>
+            <div class="facility-card reveal-scale delay-3">
+                <div class="facility-icon"><i class="fa-solid fa-building" style="color: #000000;"></i></div>
+                <h3 class="facility-text">Hostel Facility</h3>
+            </div>
+            <div class="facility-card reveal-scale delay-4">
+                <div class="facility-icon"><i class="fa-solid fa-arrow-pointer" style="color: #38bdf8;"></i></div>
+                <h3 class="facility-text">Future Guidance</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Footer -->
+    <footer class="footer-section reveal">
+        <div class="footer-container">
+            <!-- Left Column -->
+            <div class="footer-col about-col">
+                <h2 class="footer-brand">ANNU'S ACADEMY</h2>
+                <p class="footer-desc">Excellence in Education since 1999.</p>
+                <div class="footer-campuses">
+                    <p><strong><i class="fa-solid fa-map-pin"></i> Academic:</strong> KDR Nagar Campus (Nursery to 10th)</p>
+                    <p><strong><i class="fa-solid fa-map-pin"></i> Residential:</strong> Nagavaram Campus (Residential & Day Scholar)</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Middle Column -->
+            <div class="footer-col links-col">
+                <h3 class="footer-title">QUICK LINKS</h3>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Academics</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Campus Life</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Column -->
+            <div class="footer-col contact-col">
+                <h3 class="footer-title">CONTACT INFO</h3>
+                <ul class="contact-info-list">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>KDR Nagar, Wanaparthy,<br>TS - 509103</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 9440623248<br>+91 9848520248</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>info@annusacademy.in</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2024 Annu's Academy. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics - Annu's Academy High School</title>
+    <!-- Google Fonts for Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500;700;900&family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        /* Academic Wings Section Styles */
+        .academics-hero {
+            background-image: url('peak_background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 4rem 2rem;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        .academics-hero h1 {
+            font-family: 'Anton', 'Impact', sans-serif;
+            font-size: 3.5rem;
+            color: #5C1F1F;
+            margin-bottom: 3rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .academic-wings-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .wing-card {
+            background: rgba(200, 130, 120, 0.9);
+            border-radius: 25px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .wing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .wing-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .wing-card h2 {
+            font-family: 'Anton', 'Impact', sans-serif;
+            font-size: 2rem;
+            color: #000;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .wing-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #5C1F1F;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .wing-card p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            color: #fff;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .academics-hero h1 {
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .academic-wings-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .wing-card {
+                padding: 2rem;
+            }
+
+            .wing-card h2 {
+                font-size: 1.6rem;
+            }
+
+            .wing-card h3 {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Exam Pattern Section Styles */
+        .exam-pattern-section {
+            background-image: url('homebg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 3rem 2rem;
+            text-align: center;
+            min-height: auto;
+        }
+
+        .exam-pattern-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #8c1010;
+            margin-bottom: 2.5rem;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        .exam-pattern-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .exam-card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 18px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            border: 2px solid rgba(212, 147, 139, 0.3);
+            z-index: 3;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .exam-card::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            right: -12px;
+            bottom: -12px;
+            background: rgba(212, 147, 139, 0.15);
+            border-radius: 22px;
+            z-index: -1;
+        }
+
+        .exam-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 35px rgba(140, 16, 16, 0.15);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .exam-card h2 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .exam-card p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.95rem;
+            color: #8c1010;
+            line-height: 1.7;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .exam-card::after {
+            content: '';
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            right: 1.5rem;
+            height: 1px;
+            background: rgba(140, 16, 16, 0.15);
+        }
+
+        /* Responsive Design for Exam Pattern */
+        @media (max-width: 768px) {
+            .exam-pattern-section h1 {
+                font-size: 2.2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .exam-pattern-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 1rem;
+            }
+
+            .exam-card {
+                padding: 2rem;
+                min-height: auto;
+            }
+
+            .exam-card h2 {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Wall of Pride Section Styles */
+        .wall-of-pride-section {
+            background-image: url('homebg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 4rem 2rem;
+            text-align: center;
+            min-height: auto;
+        }
+
+        .wall-of-pride-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #8c1010;
+            margin-bottom: 3rem;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        .wall-of-pride-container {
+            max-width: 1800px;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            padding: 3rem 2rem;
+        }
+
+        .swiper-container {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .swiper-wrapper {
+            display: flex;
+        }
+
+        .pride-card {
+            background: rgba(255, 255, 255, 0.98);
+            border: 2.5px solid rgba(212, 147, 139, 0.7);
+            border-radius: 30px;
+            padding: 2.5rem;
+            text-align: center;
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .pride-card-image {
+            width: 100%;
+            height: 220px;
+            background: rgba(235, 220, 215, 0.6);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(140, 16, 16, 0.3);
+            font-size: 4rem;
+        }
+
+        .pride-card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            width: 100%;
+            gap: 1.2rem;
+        }
+
+        .pride-name {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .pride-label {
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.95rem;
+            color: #8c1010;
+            margin: 0;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .pride-value {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.35rem;
+            color: #8c1010;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .pride-card h3 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.95rem;
+            color: #8c1010;
+            margin: 0;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .pride-card p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.35rem;
+            color: #8c1010;
+            margin: 0;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .pride-card:hover {
+            box-shadow: 0 12px 35px rgba(140, 16, 16, 0.18);
+            transform: translateY(-8px);
+        }
+
+        .nav-arrow {
+            background: rgba(255, 255, 255, 0.95);
+            border: 2.5px solid #8c1010;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer !important;
+            transition: all 0.3s ease;
+            color: #8c1010;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            z-index: 10;
+            position: relative;
+        }
+
+        .nav-arrow:hover {
+            background: #8c1010;
+            color: white;
+            transform: scale(1.15);
+            box-shadow: 0 4px 15px rgba(140, 16, 16, 0.3);
+            cursor: pointer !important;
+        }
+
+        .nav-arrow:active {
+            transform: scale(1.05);
+            cursor: pointer !important;
+        }
+
+        .nav-arrow i {
+            pointer-events: none;
+            cursor: pointer;
+        }
+
+        .swiper-pagination {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-top: 2.5rem;
+        }
+
+        .swiper-pagination-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: rgba(140, 16, 16, 0.4);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: none;
+        }
+
+        .swiper-pagination-dot:hover {
+            background: rgba(140, 16, 16, 0.6);
+        }
+
+        .swiper-pagination-dot.active {
+            background: #8c1010;
+            width: 40px;
+            border-radius: 8px;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #8c1010, transparent);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Extra Curricular & Beyond Classroom Sections */
+        .activities-section {
+            background-image: url('homebg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 4rem 2rem;
+            text-align: center;
+            min-height: auto;
+        }
+
+        .activities-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: #8c1010;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .activities-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: #8c1010;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .activities-section p.subtitle {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            color: #8c1010;
+            margin-bottom: 3rem;
+            font-weight: 500;
+        }
+
+        .activity-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .activity-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .activity-item:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .activity-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .activity-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 25px 60px rgba(140, 16, 16, 0.25);
+            display: block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .activity-image img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 70px rgba(140, 16, 16, 0.35);
+        }
+
+        .activity-content {
+            text-align: left;
+            padding-right: 2rem;
+        }
+
+        .activity-item:nth-child(even) .activity-content {
+            padding-right: 0;
+            padding-left: 2rem;
+        }
+
+        .activity-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.85rem;
+            color: #8c1010;
+            margin-bottom: 1rem;
+            margin-top: 0;
+            font-weight: 700;
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+
+        .activity-divider {
+            width: 60px;
+            height: 2px;
+            background: rgba(212, 147, 139, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        .activity-content p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.05rem;
+            color: #8c1010;
+            line-height: 1.9;
+            margin: 0;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        /* Responsive Design for Activities */
+        @media (max-width: 768px) {
+            .activities-section h1 {
+                font-size: 1.8rem;
+            }
+
+            .activities-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .activity-item {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .activity-item:nth-child(even) {
+                direction: ltr;
+            }
+
+            .activity-content {
+                text-align: center;
+                padding-right: 0;
+            }
+
+            .activity-item:nth-child(even) .activity-content {
+                padding-left: 0;
+            }
+
+            .activity-divider {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .activity-image img {
+                height: 200px;
+            }
+        }
+
+        /* Swiper animations */
+        .swiper-slide {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .swiper-slide-active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .swiper-slide-next {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Responsive Design for Wall of Pride */
+        @media (max-width: 768px) {
+            .wall-of-pride-section h1 {
+                font-size: 2.2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .wall-of-pride-container {
+                gap: 1.5rem;
+                padding: 2rem 1rem;
+            }
+
+            .nav-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .pride-card {
+                min-height: 320px;
+                padding: 2rem;
+            }
+
+            .pride-card-image {
+                height: 150px;
+                margin-bottom: 1.5rem;
+                font-size: 3rem;
+            }
+
+            .pride-card h3 {
+                font-size: 1rem;
+            }
+
+            .pride-card p {
+                font-size: 0.95rem;
+            }
+
+            .swiper-pagination-dot {
+                width: 12px;
+                height: 12px;
+            }
+
+            .swiper-pagination-dot.active {
+                width: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-section">
+            <img src="logo.jpg" alt="Annu's Academy Logo">
+            <div class="logo-text">
+                <span class="logo-text-top">ANNU'S ACADEMY</span>
+                <span class="logo-text-bottom">HIGH SCHOOL</span>
+            </div>
+        </div>
+        <nav>
+            <ul id="nav-list">
+                <a href="#" class="mobile-close-btn mobile-only" id="close-menu"><i class="fas fa-times"></i></a>
+                <li><a href="annusproto.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="academics.html">ACADEMICS</a></li>
+                <li><a href="campuslife.html">CAMPUS LIFE</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Academic Wings Section -->
+    <section class="academics-hero">
+        <h1 class="reveal">Academic Wings</h1>
+        
+        <div class="academic-wings-container">
+            <!-- Primary Wing Card -->
+            <div class="wing-card reveal delay-1">
+                <img src="42.png" alt="Primary Wing Students">
+                <h2>PRIMARY WING</h2>
+                <h3>Nursery to Class 5</h3>
+                <p>" Focus on foundational skills & play-way method "</p>
+            </div>
+
+            <!-- High School Wing Card -->
+            <div class="wing-card reveal delay-2">
+                <img src="43.png" alt="High School Wing Students">
+                <h2>High School WING</h2>
+                <h3>Class 5 to Class 10</h3>
+                <p>" Focus on core subjects & logical reasoning "</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exam Pattern Section -->
+    <section class="exam-pattern-section reveal">
+        <h1 class="reveal">Exam Pattern</h1>
+        
+        <div class="exam-pattern-container">
+            <!-- Formative Assessments Card -->
+            <div class="exam-card">
+                <h2>Formative Assessments (FA 1-4)</h2>
+                <p>" Regular monthly tests to check understanding. "</p>
+            </div>
+
+            <!-- Summative Assessments Card -->
+            <div class="exam-card">
+                <h2>Summative Assessments (SA 1-2)</h2>
+                <p>" Term-end exams (Half-yearly & Annual). "</p>
+            </div>
+
+            <!-- Special Mock Tests Card -->
+            <div class="exam-card">
+                <h2>Special Mock Tests</h2>
+                <p>" Specifically for Class 10 and Olympiad students. "</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider Line -->
+    <div class="section-divider"></div>
+
+    <!-- Wall of Pride Section -->
+    <section class="wall-of-pride-section reveal">
+        <h1 class="reveal">The "Wall of Pride"</h1>
+        
+        <div class="wall-of-pride-container reveal delay-1">
+            <div class="nav-arrow prev-arrow">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+
+            <div class="swiper-container" id="prideSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Pride Card 1 -->
+                    <div class="swiper-slide">
+                        <div class="pride-card">
+                            <div class="pride-card-image">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="pride-card-content">
+                                <div class="pride-name">
+                                    <h3>NAME:</h3>
+                                    <p>Arjun Sharma</p>
+                                </div>
+                                <div class="pride-name">
+                                    <h3>Scored :</h3>
+                                    <p>580/600</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pride Card 2 -->
+                    <div class="swiper-slide">
+                        <div class="pride-card">
+                            <div class="pride-card-image">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="pride-card-content">
+                                <div class="pride-name">
+                                    <h3>NAME:</h3>
+                                    <p>Priya Patel</p>
+                                </div>
+                                <div class="pride-name">
+                                    <h3>Scored :</h3>
+                                    <p>595/600</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pride Card 3 -->
+                    <div class="swiper-slide">
+                        <div class="pride-card">
+                            <div class="pride-card-image">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="pride-card-content">
+                                <div class="pride-name">
+                                    <h3>NAME:</h3>
+                                    <p>Ananya Reddy</p>
+                                </div>
+                                <div class="pride-name">
+                                    <h3>Scored :</h3>
+                                    <p>586/600</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pride Card 4 -->
+                    <div class="swiper-slide">
+                        <div class="pride-card">
+                            <div class="pride-card-image">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="pride-card-content">
+                                <div class="pride-name">
+                                    <h3>NAME:</h3>
+                                    <p>Rohan Malik</p>
+                                </div>
+                                <div class="pride-name">
+                                    <h3>Scored :</h3>
+                                    <p>592/600</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pride Card 5 -->
+                    <div class="swiper-slide">
+                        <div class="pride-card">
+                            <div class="pride-card-image">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="pride-card-content">
+                                <div class="pride-name">
+                                    <h3>NAME:</h3>
+                                    <p>Isha Gupta</p>
+                                </div>
+                                <div class="pride-name">
+                                    <h3>Scored :</h3>
+                                    <p>589/600</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-pagination" id="pridePagination"></div>
+            </div>
+
+            <div class="nav-arrow next-arrow">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider Line -->
+    <div class="section-divider"></div>
+
+    <!-- Extra Curricular Activities Section -->
+    <section class="activities-section reveal">
+        <h1 class="reveal">EXTRA CURRICULAR ACTIVITIES</h1>
+
+        <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
+            <!-- Activity 1: Heritage & Traditions -->
+            <div class="activity-item reveal">
+                <div class="activity-image reveal">
+                    <img src="24.jpg" alt="Heritage & Traditions">
+                </div>
+                <div class="activity-content reveal delay-1">
+                    <h3>Heritage & Traditions</h3>
+                    <div class="activity-divider"></div>
+                    <p>Celebrating our roots with vibrant Bathukamma festivities, keeping the rich culture of Telangana alive in our students.</p>
+                </div>
+            </div>
+
+            <!-- Activity 2: National Pride & Patriotism -->
+            <div class="activity-item reveal">
+                <div class="activity-image reveal">
+                    <img src="32.png" alt="National Pride & Patriotism">
+                </div>
+                <div class="activity-content reveal delay-1">
+                    <h3>National Pride & Patriotism</h3>
+                    <div class="activity-divider"></div>
+                    <p>Instilling a sense of national identity through grand Independence Day celebrations and patriotic tributes.</p>
+                </div>
+            </div>
+
+            <!-- Activity 3: Junior Chef & Creative Arts -->
+            <div class="activity-item reveal">
+                <div class="activity-image reveal">
+                    <img src="17.jpg" alt="Junior Chef & Creative Arts">
+                </div>
+                <div class="activity-content reveal delay-1">
+                    <h3>Junior Chef & Creative Arts</h3>
+                    <div class="activity-divider"></div>
+                    <p>Exploring creative talents and practical life skills through interactive 'Junior Chef' programs and hands-on activities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider Line -->
+    <div class="section-divider"></div>
+
+    <!-- Beyond the Classroom Section -->
+    <section class="activities-section reveal">
+        <h2 class="reveal">Beyond the Classroom: Journeys of Joy</h2>
+        <p class="subtitle reveal delay-1">At Annu's Academy, we believe student life should be full of adventure, laughter, and exploration.</p>
+
+        <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
+            <!-- Activity 4: Nehru Zoological Park -->
+            <div class="activity-item reveal">
+                <div class="activity-image reveal">
+                    <img src="25.jpg" alt="Nehru Zoological Park">
+                </div>
+                <div class="activity-content reveal delay-1">
+                    <h3>Nehru Zoological Park</h3>
+                    <div class="activity-divider"></div>
+                    <p>Exploring the wonders of the animal kingdom to spark curiosity and wonder, allowing students to connect with nature in a fun, relaxed environment.</p>
+                </div>
+            </div>
+
+            <!-- Activity 5: Wonderla Water Park -->
+            <div class="activity-item reveal">
+                <div class="activity-image reveal">
+                    <img src="28.jpg" alt="Wonderla Water Park">
+                </div>
+                <div class="activity-content reveal delay-1">
+                    <h3>Wonderla Water Park</h3>
+                    <div class="activity-divider"></div>
+                    <p>A day of high-energy adventure where students take a break from books to enjoy world-class rides and water slides, fostering friendship and pure happiness.</p>
+                </div>
+            </div>
+
+            <!-- Activity 6: Ramoji Film City -->
+            <div class="activity-item reveal">
+                <div class="activity-image reveal">
+                    <img src="27.jpg" alt="Ramoji Film City">
+                </div>
+                <div class="activity-content reveal delay-1">
+                    <h3>Ramoji Film City</h3>
+                    <div class="activity-divider"></div>
+                    <p>Stepping into the magic of cinema and grand architecture, where students enjoy a day of spectacular shows and creative inspiration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- FOOTER SECTION --- -->
+    <footer class="footer-section reveal">
+        <div class="footer-container">
+            <!-- Left Column -->
+            <div class="footer-col about-col">
+                <h2 class="footer-brand">ANNU'S ACADEMY</h2>
+                <p class="footer-desc">Excellence in Education since 1999.</p>
+                <div class="footer-campuses">
+                    <p><strong><i class="fa-solid fa-map-pin"></i> Academic:</strong> KDR Nagar Campus (Nursery to 10th)</p>
+                    <p><strong><i class="fa-solid fa-map-pin"></i> Residential:</strong> Nagavaram Campus (Residential & Day Scholar)</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Middle Column -->
+            <div class="footer-col links-col">
+                <h3 class="footer-title">QUICK LINKS</h3>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Academics</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Campus Life</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Column -->
+            <div class="footer-col contact-col">
+                <h3 class="footer-title">CONTACT INFO</h3>
+                <ul class="contact-info-list">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>KDR Nagar, Wanaparthy,<br>TS - 509103</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 9440623248<br>+91 9848520248</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>info@annusacademy.in</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2024 Annu's Academy. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    // Initialize Swiper
+    const swiper = new Swiper('#prideSwiper', {
+        loop: true,
+        slidesPerView: 2.05,
+        spaceBetween: 10,
+        centeredSlides: false,
+        effect: 'slide',
+        speed: 600,
+        pagination: {
+            el: '#pridePagination',
+            clickable: true,
+            renderBullet: function(index, className) {
+                return '<span class="swiper-pagination-dot ' + className + '"></span>';
+            }
+        },
+        navigation: {
+            nextEl: '.next-arrow',
+            prevEl: '.prev-arrow'
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            },
+            768: {
+                slidesPerView: 2.05,
+                spaceBetween: 10
+            },
+            1024: {
+                slidesPerView: 2.05,
+                spaceBetween: 10
+            }
+        }
+    });
+
+    // Ensure arrow buttons are clickable
+    document.addEventListener('DOMContentLoaded', function() {
+        const prevBtn = document.querySelector('.prev-arrow');
+        const nextBtn = document.querySelector('.next-arrow');
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                swiper.slidePrev();
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                swiper.slideNext();
+            });
+        }
+    });
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

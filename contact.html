@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Annu's Academy</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Contact Page specific styles */
+        body.contact-page {
+            background-color: #fcebeb; /* fallback */
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-hero {
+            background-image: url('peak_background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center top;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+        /* Main Contact Section */
+        .contact-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5rem 2rem;
+        }
+
+        .contact-card-wrapper {
+            background-image: url('homebg.png');
+            background-color: rgba(245, 235, 233, 0.95); /* matching creamy pink overlay */
+            background-blend-mode: overlay;
+            border-radius: 30px;
+            padding: 3rem 4rem 4rem 4rem;
+            max-width: 1100px;
+            width: 100%;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        .contact-card-wrapper h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.5rem;
+            color: #8c1010;
+            font-weight: 800;
+            margin: 0 0 3.5rem 0;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 2.5rem;
+            align-items: stretch; /* Explicitly forces grid columns to stretch to the tallest column */
+        }
+
+        .cd-card-layer {
+            background-color: rgba(220, 150, 150, 0.18); /* Light pink transparent shadow overlay */
+            padding: 18px;
+            border-radius: 32px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(140, 16, 16, 0.05);
+            transition: transform 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .cd-card-layer:hover {
+            transform: translateY(-5px);
+        }
+
+        .cd-inner-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 3rem 1.5rem;
+            width: 100%;
+            border: 1.5px solid rgba(140, 16, 16, 0.35); /* crisp thin red border */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Aligns items perfectly from the top so headings match horizontally! */
+            flex-grow: 1; /* Unequivocally forces the inner card to eat up whatever height the layer offers */
+            box-sizing: border-box;
+            box-shadow: inset 0 0 0 1px #fff;
+        }
+
+        .cd-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.6rem;
+            color: #222;
+            font-weight: 900;
+            margin: 0 0 2rem 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .cd-section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #111;
+            font-weight: 800;
+            margin: 0 0 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cd-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: #8c1010;
+            font-weight: 700;
+            margin: 0 0 1.5rem 0;
+            word-break: break-word; /* Allows long unbreakable text to wrap cleanly */
+            text-align: center;
+        }
+
+        .cd-value.cd-grey {
+            color: #666;
+            margin-bottom: 0.5rem; 
+        }
+
+        .cd-value.cd-large {
+            font-size: 1.15rem;
+            margin-bottom: 0;
+        }
+
+        .cd-inner-card > :last-child {
+            margin-bottom: 0;
+        }
+
+        .cd-icon-svg {
+            width: 42px;
+            height: 42px;
+            margin-bottom: 1.5rem;
+            stroke: #111;
+        }
+
+        /* Get Directions button */
+        .get-directions-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.15);
+            color: #111;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+            margin-top: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        .get-directions-btn:hover {
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+        }
+
+        /* Footer styling inclusion if needed */
+        .footer-section {
+            margin-top: auto; 
+        }
+
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            .contact-card-wrapper {
+                padding: 3rem 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-hero {
+                height: auto;
+            }
+            .contact-page header {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="contact-page">
+
+    <div class="contact-hero">
+        <!-- Header -->
+        <header>
+            <div class="logo-section">
+                <img src="logo.jpg" alt="Annu's Academy Logo">
+                <div class="logo-text">
+                    <span class="logo-text-top">ANNU'S ACADEMY</span>
+                    <span class="logo-text-bottom">HIGH SCHOOL</span>
+                </div>
+            </div>
+            <nav>
+                <ul id="nav-list">
+                    <a href="#" class="mobile-close-btn mobile-only" id="close-menu"><i class="fas fa-times"></i></a>
+                    <li><a href="annusproto.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="academics.html">ACADEMICS</a></li>
+                    <li><a href="campuslife.html">CAMPUS LIFE</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+        <!-- Form / Contact Grid Section -->
+        <section class="contact-container">
+            <div class="contact-card-wrapper reveal">
+                <h1>CONTACT DETAILS</h1>
+
+                <div class="contact-grid">
+                    <!-- Phone Section -->
+                    <div class="cd-card-layer reveal delay-1">
+                        <div class="cd-inner-card">
+                            <svg class="cd-icon-svg" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                <path d="M14.05 2a9 9 0 0 1 8 7.94" />
+                                <path d="M14.05 6A5 5 0 0 1 18 10" />
+                            </svg>
+                            <h2 class="cd-title">CONTACT</h2>
+                            <h3 class="cd-section-title">PHONE</h3>
+                            <p class="cd-value">0987654321 | 1234567890</p>
+                            <h3 class="cd-section-title">EMAIL</h3>
+                            <p class="cd-value">annusacademywnp@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <!-- Location Section -->
+                    <div class="cd-card-layer reveal delay-2">
+                        <div class="cd-inner-card">
+                            <svg class="cd-icon-svg" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <h2 class="cd-title">LOCATION</h2>
+                            <h3 class="cd-section-title">ACADEMICS</h3>
+                            <p class="cd-value">KDR NAGAR, WNP , 509103</p>
+                            <h3 class="cd-section-title">RESIDENTIAL</h3>
+                            <p class="cd-value" style="margin-bottom: 0.5rem;">NAGAVARAM , WNP , 509103</p>
+                            <a href="#" class="get-directions-btn" data-lat="16.3618724" data-lng="78.056756">Get Directions &#x2197;</a>
+                        </div>
+                    </div>
+
+                    <!-- Timings Section -->
+                    <div class="cd-card-layer reveal delay-3">
+                        <div class="cd-inner-card">
+                            <svg class="cd-icon-svg" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <h2 class="cd-title">TIMINGS</h2>
+                            <h3 class="cd-section-title">SCHOOL TIMINGS</h3>
+                            <p class="cd-value cd-grey" style="margin-top: 1rem;">MON - SAT</p>
+                            <p class="cd-value cd-large">9 : 00 AM - 5 : 00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- --- FOOTER SECTION --- -->
+    <footer class="footer-section reveal">
+        <div class="footer-container">
+            <!-- Left Column -->
+            <div class="footer-col about-col">
+                <h2 class="footer-brand">ANNU'S ACADEMY</h2>
+                <p class="footer-desc">Excellence in Education since 1999.</p>
+                <div class="footer-campuses">
+                    <p><strong><i class="fa-solid fa-map-pin"></i> Academic:</strong> KDR Nagar Campus (Nursery to 10th)</p>
+                    <p><strong><i class="fa-solid fa-map-pin"></i> Residential:</strong> Nagavaram Campus (Residential & Day Scholar)</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Middle Column -->
+            <div class="footer-col links-col">
+                <h3 class="footer-title">QUICK LINKS</h3>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Academics</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Campus Life</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Column -->
+            <div class="footer-col contact-col">
+                <h3 class="footer-title">CONTACT INFO</h3>
+                <ul class="contact-info-list">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>KDR Nagar, Wanaparthy,<br>TS - 509103</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 9440623248<br>+91 9848520248</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>info@annusacademy.in</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2024 Annu's Academy. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
